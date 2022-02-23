@@ -35,7 +35,7 @@ def Get_X_Inputs(x):
         while gettingNum:
             num = input("Enter number " + str(i + 1) + ":")
             if Is_Float(num):  # Checks that the user's input is a float
-                digits.append(num)  # Adds the users input to the list of inputs
+                digits.append(float(num))  # Adds the users input to the list of inputs
                 gettingNum = False  # Ends the "gettingNum" loop
             else:  # Runs if the user hasn't entered a float
                 print("Please enter a number.")
@@ -45,8 +45,8 @@ def Get_X_Inputs(x):
 
 def Add(digits): #Adds together the list that is inputed
     output = 0
-    for i in digits:
-        output += float(digits[int(i) - 1])
+    for i in range(len(digits)):
+        output += digits[int(i)]
     return output
 
 def Subtract(digits): #Subtracts the first input from the second
@@ -54,13 +54,13 @@ def Subtract(digits): #Subtracts the first input from the second
 
 def Multiply(digits): #Multiplies together the list that is inputed
     output = 0
-    for i in digits:
-        output *= float(digits[int(i)])
+    for i in range(len(digits)):
+        output *= digits[int(i)]
     return output
 
 def Divide(digits): #Divides the first number inputed by the second
     try:
-        return float(digits[0])/float(digits[1])
+        return digits[0]/digits[1]
     except:
         return "undefined, a number cannot be divided by 0"
 

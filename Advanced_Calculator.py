@@ -1,10 +1,6 @@
 import time #Used for better text readability
 import sys #used to end the program once the user is finished
 
-operators = ["+", "-", "x", "/"] #Creates a list of eligible operations that the calculator can perform
-
-print(0/5)
-
 def Is_Float(string): #Determines if the input is able to be turned into a float
     try:
         string = float(string)
@@ -64,7 +60,7 @@ def Multiply(digits): #Multiplies together the list that is inputed
 
 def Divide(digits): #Divides the first number inputed by the second
     try:
-        return digits[0]/digits[1]
+        return float(digits[0])/float(digits[1])
     except:
         return "undefined, a number cannot be divided by 0"
 
